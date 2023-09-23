@@ -1,0 +1,9 @@
+.requests-container {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.requests-container__request {
+  display: grid;
+}

@@ -1,0 +1,8 @@
+<div class="request-form">
+  <div class="request-form__container">
+    <input type="text" placeholder="Search" [(ngModel)]="name" />
+    <input type="number" placeholder="Duration" [(ngModel)]="duration" />
+    <input type="category" placeholder="Category" [(ngModel)]="category" />
+  </div>
+  <button (click)="onAddRequest()">Add</button>
+</div>

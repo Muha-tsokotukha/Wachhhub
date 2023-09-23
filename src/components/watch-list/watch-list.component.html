@@ -1,0 +1,15 @@
+<div class="requests-container" *ngFor="let request of requests; index as i">
+  <span>{{ i + 1 }}.</span>
+
+  <div class="requests-container__request">
+    <span
+      >Duration : <b>{{ request.duration }}</b> hour</span
+    >
+    <span
+      >Category : <b>{{ request.category }}</b></span
+    >
+    <span *ngIf="!!request.name"
+      >Search : <b>{{ request.name }}</b></span
+    >
+  </div>
+</div>

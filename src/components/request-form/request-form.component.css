@@ -1,0 +1,13 @@
+.request-form {
+  display: grid;
+  justify-content: center;
+}
+
+.request-form__container {
+  display: grid;
+  gap: 20px;
+}
+
+.request-form__container input {
+  width: 320px;
+}
