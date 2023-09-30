@@ -8,8 +8,10 @@
     <span
       >Category : <b>{{ request.category }}</b></span
     >
-    <span *ngIf="!!request.name"
-      >Search : <b>{{ request.name }}</b></span
-    >
+    <ng-container *checkName="request.name">
+      <span
+        >Search : <b>{{ request.name }}</b></span
+      >
+    </ng-container>
   </div>
 </div>
