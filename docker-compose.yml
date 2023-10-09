@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: your-angular-image-name
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app

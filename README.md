@@ -69,4 +69,3 @@ This project is a frontend-only movie browsing application, leveraging the power
 
 By strictly following this blueprint, you will manifest a frontend-centric "Movie Hub" application utilizing Angular and the Movie DB API. The end result will be an intuitive, efficient application, designed to serve as a Progressive Web Application.
 
-ng build --configuration production
