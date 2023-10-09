@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzMenuModule} from "ng-zorro-antd/menu";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(en);
 
@@ -29,7 +30,12 @@ registerLocaleData(en);
     HeaderComponent,
     SidebarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, NzLayoutModule, NzMenuModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, NzLayoutModule, NzMenuModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: !isDevMode(),
+  // Register the ServiceWorker as soon as the application is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
   ],
