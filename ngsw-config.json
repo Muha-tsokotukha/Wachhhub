@@ -22,5 +22,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "movie-api",
+      "urls": ["https://api.example-movie-db.com/movies"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "5s"
+      }
+    }
   ]
 }

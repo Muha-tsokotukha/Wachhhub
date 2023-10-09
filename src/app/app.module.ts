@@ -18,6 +18,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzMenuModule} from "ng-zorro-antd/menu";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OfflineComponent } from './components/offline/offline.component';
 
 registerLocaleData(en);
 
@@ -29,6 +30,7 @@ registerLocaleData(en);
     CheckNameDirective,
     HeaderComponent,
     SidebarComponent,
+    OfflineComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, NzLayoutModule, NzMenuModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),
