@@ -15,10 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import {NzLayoutModule} from "ng-zorro-antd/layout";
-import {NzMenuModule} from "ng-zorro-antd/menu";
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { OfflineComponent } from './components/offline/offline.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MovieDetailedComponent } from './pages/movie-detailed/movie-detailed.component';
+import {NzAnchorModule} from "ng-zorro-antd/anchor";
 
 registerLocaleData(en);
 
@@ -31,16 +34,26 @@ registerLocaleData(en);
     HeaderComponent,
     SidebarComponent,
     OfflineComponent,
+    HomeComponent,
+    MovieDetailedComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, NzLayoutModule, NzMenuModule, ServiceWorkerModule.register('ngsw-worker.js', {
-  enabled: !isDevMode(),
-  // Register the ServiceWorker as soon as the application is stable
-  // or after 30 seconds (whichever comes first).
-  registrationStrategy: 'registerWhenStable:30000'
-})],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US }
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NzLayoutModule,
+    NzMenuModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+    NzAnchorModule,
   ],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
