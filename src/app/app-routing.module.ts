@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { MovieDetailedComponent } from './pages/movie-detailed/movie-detailed.component';
-import {LoginComponent} from "./pages/login/login.component";
-import {RegisterComponent} from "./pages/register/register.component";
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { MyListComponent } from './pages/my-list/my-list.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'movie/:id',
+    path: 'movies',
+    component: MoviesComponent,
+  },
+  {
+    path: 'movies/:id',
     component: MovieDetailedComponent,
   },
   {
@@ -21,6 +27,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'my-list',
+    component: MyListComponent,
   },
 ];
 
