@@ -29,6 +29,8 @@ import {NzIconModule} from "ng-zorro-antd/icon";
 import { LogoComponent } from './components/logo/logo.component';
 import {NzButtonModule} from "ng-zorro-antd/button";
 import { RegisterComponent } from './pages/register/register.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { MyListComponent } from './pages/my-list/my-list.component';
 
 registerLocaleData(en);
 
@@ -46,6 +48,8 @@ registerLocaleData(en);
     LoginComponent,
     LogoComponent,
     RegisterComponent,
+    MoviesComponent,
+    MyListComponent,
   ],
   imports: [
     BrowserModule,
