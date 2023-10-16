@@ -14,7 +14,7 @@ const routes: Routes = [
     component: MovieListComponent,
   },
   {
-    path: 'movie/:id',
+    path: 'movies/:id',
     component: MovieDetailedComponent,
   },
 ];

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from "../../movie.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-list',
@@ -11,7 +12,7 @@ export class MovieListComponent implements OnInit {
   nextUrl!: string;
 
 
-  constructor(private movieService: MovieService) {}
+  constructor(private router: Router, private movieService: MovieService) {}
 
   ngOnInit() {
     this.fetchMovies();
@@ -34,6 +35,12 @@ export class MovieListComponent implements OnInit {
     if (this.nextUrl) {
       this.fetchMovies();
     }
+  }
+
+  goToMovieDetail(movieId: string) {
+    console.log(movieId)
+    // Navigate to the movie detail page with the movie ID as a route parameter
+    this.router.navigate(['/movies', movieId]);
   }
 
 }

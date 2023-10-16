@@ -1,1 +1,12 @@
-<p>movie-detailed works!</p>
+<div class="movie-detail">
+  <h1>{{ movie.titleText.text }}</h1>
+  <div class="movie-poster">
+    <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" />
+  </div>
+  <div class="movie-details">
+    <p><strong>ID:</strong> {{ movie.id }}</p>
+    <p><strong>Title Type:</strong> {{ movie.titleType.text }}</p>
+    <p><strong>Release Year:</strong> {{ movie.releaseYear.year }}</p>
+    <!-- Add more details as needed -->
+  </div>
+</div>

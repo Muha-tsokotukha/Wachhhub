@@ -1,35 +1,66 @@
+/* Styles for the movie list */
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: #333;
-  color: #fff;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .movie-item {
-  background-color: #444;
+  border: 1px solid #e0e0e0;
   border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  max-width: 250px;
-  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #fff;
+}
+
+.movie-item:hover {
+  transform: scale(1.03);
 }
 
 .movie-poster {
   max-width: 100%;
   height: auto;
-  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
+.movie-details {
+  margin-top: 10px;
+}
+
+/* Styles for movie details */
 .movie-details h2 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 5px 0;
 }
 
 .movie-details p {
-  margin: 5px 0;
+  font-size: 14px;
+  margin: 3px 0;
 }
 
-/* You can customize the colors, fonts, and other styles as needed. */
+/* Load More Button */
+.load-more-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.load-more-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for responsive design (adjust as needed) */
+@media (max-width: 768px) {
+  .movie-item {
+    width: 100%;
+  }
+}
