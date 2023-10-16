@@ -80,3 +80,4 @@ This project is a frontend-only movie browsing application, leveraging the power
 - Commit and push all modifications to your version control repository.
 
 By strictly following this blueprint, you will manifest a frontend-centric "Movie Hub" application utilizing Angular and the Movie DB API. The end result will be an intuitive, efficient application, designed to serve as a Progressive Web Application.
+https://rapidapi.com/SAdrian/api/moviesdatabase

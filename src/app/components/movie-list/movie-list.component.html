@@ -1,0 +1,14 @@
+<div class="movie-list">
+  <div *ngFor="let movie of movies" class="movie-item">
+    <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" class="movie-poster" />
+    <div class="movie-details">
+      <h2>{{ movie.titleText.text }}</h2>
+      <p><strong>ID:</strong> {{ movie.id }}</p>
+      <p><strong>Title Type:</strong> {{ movie.titleType.text }}</p>
+      <p><strong>Release Year:</strong> {{ movie.releaseYear.year }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Load More Button -->
+<button (click)="loadMore()" *ngIf="nextUrl" class="load-more-button">Load More</button>

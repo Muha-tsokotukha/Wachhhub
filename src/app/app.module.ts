@@ -22,6 +22,7 @@ import { OfflineComponent } from './components/offline/offline.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MovieDetailedComponent } from './pages/movie-detailed/movie-detailed.component';
 import {NzAnchorModule} from "ng-zorro-antd/anchor";
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 registerLocaleData(en);
 
@@ -36,6 +37,7 @@ registerLocaleData(en);
     OfflineComponent,
     HomeComponent,
     MovieDetailedComponent,
+    MovieListComponent,
   ],
   imports: [
     BrowserModule,
