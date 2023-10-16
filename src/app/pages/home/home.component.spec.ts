@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OfflineComponent } from './offline.component';
+import { HomeComponent } from './home.component';
 
-describe('OfflineComponent', () => {
-  let component: OfflineComponent;
-  let fixture: ComponentFixture<OfflineComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OfflineComponent],
+      declarations: [HomeComponent],
     });
-    fixture = TestBed.createComponent(OfflineComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,11 +5,7 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [
-          "/*.css",
-          "/*.js",
-          "/*.html"
-        ]
+        "files": ["/*.css", "/*.js", "/*.html"]
       }
     },
     {
@@ -17,9 +13,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/**"
-        ]
+        "files": ["/assets/**"]
       }
     }
   ],

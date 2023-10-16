@@ -6,7 +6,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 export class CheckNameDirective {
   constructor(
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
   ) {}
 
   @Input() set checkName(name: string | undefined) {

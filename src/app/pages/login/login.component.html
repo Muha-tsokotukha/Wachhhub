@@ -1,0 +1,36 @@
+<div class="login-page-container">
+  <div class="gradient"></div>
+  <div class="input-container">
+    <h2>
+      Log In!
+    </h2>
+  <nz-input-group [nzSuffix]="suffixTemplateInfo" [nzPrefix]="prefixTemplateUser">
+    <input type="text" nz-input placeholder="Enter your username"
+           [(ngModel)]="userName"
+    />
+  </nz-input-group>
+  <ng-template #prefixTemplateUser><span nz-icon nzType="user"></span></ng-template>
+  <ng-template #suffixTemplateInfo>
+    <span nz-icon nz-tooltip nzTooltipTitle="All information is secure" nzType="info-circle"></span>
+  </ng-template>
+  <nz-input-group [nzSuffix]="suffixTemplate">
+    <input
+      [type]="passwordVisible ? 'text' : 'password'"
+      nz-input
+      placeholder="input password"
+      [(ngModel)]="password"
+    />
+  </nz-input-group>
+  <ng-template #suffixTemplate>
+      <span
+        nz-icon
+        [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+        (click)="passwordVisible = !passwordVisible"
+      ></span>
+  </ng-template>
+    <button nz-button nzType="primary" (click)="fetchUsers(userName, password)">log in </button>
+    <div *ngIf="errorMessages">
+      <p>{{errorMessages}}</p>
+    </div>
+  </div>
+</div>
