@@ -1,14 +1,17 @@
 <nz-header style="background: #fff; padding: 0">
   <div class="logo"></div>
-  <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px">
-    <li nz-menu-item>
-      <a href="/home">Home</a>
-    </li>
-    <li nz-menu-item>
-      <a nz-link href="/movies"> Movies </a>
-    </li>
-    <li nz-menu-item>
-      <a nz-link href="/my-list"> My list </a>
-    </li>
-  </ul>
+  <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;padding-right: 20px; background-color: #1f1f1f;">
+    <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px">
+      <li nz-menu-item>
+        <a href="/home">Home</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-link href="/movies"> Movies </a>
+      </li>
+      <li nz-menu-item>
+        <a nz-link href="/my-list"> My list </a>
+      </li>
+    </ul>
+    <button nz-button nzType="primary" (click)="logout()">log out</button>
+  </div>
 </nz-header>

@@ -29,6 +29,8 @@
       ></span>
   </ng-template>
     <button nz-button nzType="primary" (click)="fetchUsers(userName, password)">log in </button>
+
+    <a href="/register">Dont have an account?</a>
     <div *ngIf="errorMessages">
       <p>{{errorMessages}}</p>
     </div>

@@ -43,7 +43,7 @@
         (click)="passwordVisible = !passwordVisible"
       ></span>
     </ng-template>
-    <button nz-button nzType="primary" (click)="fetchUsers(userName, password)">log in </button>
+    <button nz-button nzType="primary" (click)="addUser(userName, password, password2)">log in </button>
     <div *ngIf="errorMessages">
       <p>{{errorMessages}}</p>
     </div>

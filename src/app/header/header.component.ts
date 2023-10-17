@@ -12,7 +12,11 @@ export class HeaderComponent implements OnInit {
   constructor(private userService: UserServiceService) { }
 
   ngOnInit(): void {
-    // Get the user object using the UserService
     this.user = this.userService.getUser();
+  }
+
+  logout() {
+    localStorage.clear();
+    window.location.reload();
   }
 }
