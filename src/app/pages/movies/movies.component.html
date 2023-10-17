@@ -1,3 +1,22 @@
+<h1 style="font-size: 42px; text-align: center">
+  Movies - scary, funny, dramatic, romantic - make us experience a whole range
+  of emotions. Many movies - many impressions!
+</h1>
+
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="search"
+    placeholder="Search"
+    class="search-input"
+  />
+  <button (click)="onSearch()">Search</button>
+</div>
+
+<div *ngIf="isEmpty" style="color: red; font-size: 24px; text-align: center">
+  There is no such movies
+</div>
+
 <div class="movie-list">
   <div
     *ngFor="let movie of movies"

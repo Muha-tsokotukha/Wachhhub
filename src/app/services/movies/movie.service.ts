@@ -10,7 +10,7 @@ export class MovieService {
 
   constructor() {}
 
-  async getMovies(pageUrl: string = '/titles', genre?: string) {
+  async getMovies(pageUrl: string = '/titles', search: string, genre?: string) {
     const options = {
       method: 'GET',
       url: `https://moviesdatabase.p.rapidapi.com${pageUrl}`,
@@ -19,7 +19,7 @@ export class MovieService {
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
       },
       ...(genre && {
-        params: { genre },
+        params: { genre, search },
       }),
     };
 
