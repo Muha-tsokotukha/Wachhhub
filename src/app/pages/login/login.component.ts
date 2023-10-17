@@ -33,7 +33,6 @@ export class LoginComponent {
           this.errorMessages = 'Success';
           localStorage.setItem('user', JSON.stringify(user))
           this.router.navigate(['/home']);
-          ;
         } else {
           this.errorMessages = 'Password is incorrect';
         }

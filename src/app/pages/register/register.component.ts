@@ -23,22 +23,14 @@ export class RegisterComponent {
 
   }
 
-  fetchUsers(username: any, password: any) {
-    this.loginService.getUsers().subscribe((data: any) => {
-      const users = data;
-      const user = users.find((user: any) => user.name === username);
-      if (user) {
-        if (user?.password === password) {
-          this.errorMessages = undefined;
-          console.log('Login successful');
-          this.errorMessages = 'Success';
-          localStorage.setItem('user', JSON.stringify(user))
-          this.router.navigate(['/home']);
-          ;
-        } else {
-          this.errorMessages = 'Password is incorrect';
-        }
-      }
+  addUser(name: any, password: any, password2: any) {
+    if(password !== password2) {
+      this.errorMessages = 'Passwords do not match';
+      return;
+    }
+    this.loginService.postUser({name, password}).subscribe((data: any) => {
+      this.errorMessages = 'Success';
+      this.router.navigate(['/']);
     });
   }
 }
