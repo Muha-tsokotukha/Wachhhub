@@ -65,3 +65,33 @@
     width: 100%;
   }
 }
+
+.search-container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container button {
+  background-color: rgb(230, 35, 35);
+  border-radius: 5px;
+  margin-left: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
