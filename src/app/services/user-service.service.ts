@@ -9,8 +9,11 @@ export class UserServiceService {
 
   getUser(): any {
     const userJson = localStorage.getItem('user');
-
-    if (userJson) {
+    if(window.location.href.includes('register') || window.location.href.includes('login')){
+      return null;
+    }
+    else if (userJson) {
+      console.log(this.router.url)
       console.log('User found')
       return JSON.parse(userJson);
     } else {
