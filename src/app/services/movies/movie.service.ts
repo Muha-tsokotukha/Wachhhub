@@ -32,7 +32,7 @@ export class MovieService {
     }
   }
 
-  getMovieDetails(movieId: string): Observable<any> {
+  async getMovieDetails(movieId: string) {
     const options = {
       method: 'GET',
       url: `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`,
@@ -42,16 +42,24 @@ export class MovieService {
       },
     };
 
-    return new Observable((observer) => {
-      axios
-        .request(options)
-        .then((response) => {
-          observer.next(response.data);
-          observer.complete();
-        })
-        .catch((error) => {
-          observer.error(error);
-        });
-    });
+    try {
+      const response = await axios.request(options);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+
+    // return new Observable((observer) => {
+    //   axios
+    //     .request(options)
+    //     .then((response) => {
+    //       observer.next(response.data);
+    //       observer.complete();
+    //     })
+    //     .catch((error) => {
+    //       observer.error(error);
+    //     });
+    // });
   }
 }
