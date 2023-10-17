@@ -1,1 +1,24 @@
-<p>movies works!</p>
+<div class="movie-list">
+  <div
+    *ngFor="let movie of movies"
+    class="movie-item"
+    (click)="goToMovieDetail(movie.id)"
+  >
+    <img
+      *ngIf="!!movie.primaryImage?.url"
+      [src]="movie.primaryImage?.url"
+      alt="{{ movie.titleText.text }}"
+      class="movie-poster"
+    />
+    <div class="movie-details">
+      <h2>{{ movie.titleText.text }}</h2>
+      <p><strong>ID:</strong> {{ movie.id }}</p>
+      <p><strong>Title:</strong> {{ movie.titleText.text }}</p>
+      <p><strong>Release Year:</strong> {{ movie.releaseYear.year }}</p>
+    </div>
+  </div>
+</div>
+
+<button (click)="loadMore()" *ngIf="nextUrl" class="load-more-button">
+  Load More
+</button>
