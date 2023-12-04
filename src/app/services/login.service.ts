@@ -11,7 +11,7 @@ type User = {
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'http://localhost:3000/'
+  private apiUrl = 'https://json-api-diqosh-cf992770784d.herokuapp.com/'
 
   constructor(private http: HttpClient) {
   }
