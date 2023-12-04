@@ -1,11 +1,18 @@
 {
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": ["/*.css", "/*.js", "/*.html"]
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
       }
     },
     {
@@ -13,19 +20,10 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/assets/**"]
-      }
-    }
-  ],
-  "dataGroups": [
-    {
-      "name": "movie-api",
-      "urls": ["https://api.example-movie-db.com/movies"],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 100,
-        "maxAge": "3d",
-        "timeout": "5s"
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
       }
     }
   ]
