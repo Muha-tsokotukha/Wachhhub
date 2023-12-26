@@ -1,22 +1,21 @@
 <div class="movie-detail">
-  <div class="movie-details">
-    <h1>{{ movie.titleText.text }}</h1>
-    <p><strong>Title Type:</strong> {{ movie.titleType.text }}</p>
-    <p><strong>Release Year:</strong> {{ movie.releaseYear.year }}</p>
-    <div class="movie-description">
-      <p>
-        {{ movie.originalTitleText.text }} is simply dummy text of the printing and typesetting industry...
-      </p>
+    <div class="movie-details">
+        <h1>{{ movie.titleText.text }}</h1>
+        <p><strong>Title Type:</strong> {{ movie.titleType.text }}</p>
+        <p><strong>Release Year:</strong> {{ movie.releaseYear.year }}</p>
+        <div class="movie-description">
+            <p>{{ movie.originalTitleText.text }} is simply dummy text of the printing and typesetting industry...</p>
+        </div>
     </div>
-  </div>
 
-  <div class="movie-poster">
-    <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" />
-    <div class="interaction-buttons">
-      <p>{{ movie.likes }}</p>
-      <button class="like-button" (click)="likePost()">like</button>
-      <button class="unlike-button" (click)="unlikePost()">unlike</button>
-      <button class="share-button" (click)="shareOnTelegram()">Поделиться в Телеграм</button>
+    <div class="movie-poster">
+        <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" />
+        <div class="interaction-buttons">
+            <p>{{ movie.likes }}</p>
+            <button class="like-button" (click)="likePost()">like</button>
+            <button class="unlike-button" (click)="unlikePost()">unlike</button>
+            <button class="share-button" (click)="shareOnTelegram()">Поделиться в Телеграм</button>
+        </div>
     </div>
-  </div>
 </div>
+<app-comments></app-comments>
