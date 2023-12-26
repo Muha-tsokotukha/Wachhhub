@@ -1,0 +1,21 @@
+<div>
+    <div class="comment-container">
+        <textarea
+            [(ngModel)]="commentInput"
+            class="comment-container__input"
+            placeholder="Now you can leave comment"
+        ></textarea>
+        <div class="comment-container__buttons">
+            <button (click)="clearComment()">Cancel</button>
+            <button (click)="leaveComment()">Publish</button>
+        </div>
+    </div>
+
+    <div class="comment-list">
+        <div *ngFor="let comment of comments">
+            <p style="color: #fff">
+                {{ comment.body }}
+            </p>
+        </div>
+    </div>
+</div>

@@ -31,6 +31,7 @@ import {NzButtonModule} from "ng-zorro-antd/button";
 import { RegisterComponent } from './pages/register/register.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 registerLocaleData(en);
 
@@ -50,6 +51,7 @@ registerLocaleData(en);
     RegisterComponent,
     MoviesComponent,
     MyListComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +72,12 @@ registerLocaleData(en);
     NzToolTipModule,
     NzIconModule,
     NzButtonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
